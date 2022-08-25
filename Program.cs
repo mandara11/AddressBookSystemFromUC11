@@ -23,7 +23,7 @@
             static void Main(string[] args)
             {
                 Console.WriteLine("Welcome to Address Book System");
-                //UC6
+                
                 AddressBookDetails addressBookDetails = new AddressBookDetails();
                 bool flag = true;
                 while (flag)
@@ -53,7 +53,7 @@
 
                         case 4:
                             try
-                            { //UC8
+                            { 
                                 Console.Write("1.City\n2.State\nEnter Choice:-"); //print 
                                 int choice2 = Convert.ToInt32(Console.ReadLine()); //take input and convert int32
                                 if (choice2 == 1) //check condition
@@ -73,7 +73,7 @@
 
                         case 5:
                             try
-                            {//UC9
+                            {
                                 Console.Write("1.City\n2.State\nEnter Choice:-"); //print
                                 int choice3 = Convert.ToInt32(Console.ReadLine()); //take input and convert int32
                                 if (choice3 == 1)
@@ -94,7 +94,7 @@
 
                         case 6:
                             try
-                            {     //UC10
+                            {     
                                 Console.Write("1.City\n2.State\nEnter Choice:-"); //print
                                 int choice4 = Convert.ToInt32(Console.ReadLine()); //take input and convert int32
                                 if (choice4 == 1)

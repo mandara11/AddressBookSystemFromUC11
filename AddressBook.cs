@@ -234,6 +234,7 @@ namespace AddressBookSystemFromUC11
 
 
         //UC11:- Ability to sort the entries in the address book alphabetically by Person’s name.
+        //UC12
         public void GetAllContacts()
         {
             if (contactList.Count() == 0) //List does not have any contacts
@@ -242,14 +243,22 @@ namespace AddressBookSystemFromUC11
                 return;
             }
             List<ContactDetails> listForSorting = null;
-            Console.WriteLine("Select the Sorting Record\n1.Name");//Print 
+            Console.WriteLine("Select the Sorting Record\n1.Name\n2.City\n3.State\n4.Zip");//Print 
             int op = Convert.ToInt32(Console.ReadLine()); //take input
             switch (op)
             {
                 case 1:
                     listForSorting = contactList.OrderBy(contact => (contact.FirstName + contact.LastName)).ToList(); //sort Name wise using lambda Expression
                     break;
-
+                case 2:
+                    listForSorting = contactList.OrderBy(contact => contact.City).ToList(); //Sorting city using lambda Expression
+                    break;
+                case 3:
+                    listForSorting = contactList.OrderBy(contact => contact.Zip).ToList(); //Sorting zip code using lambda Expression
+                    break;
+                case 4:
+                    listForSorting = contactList.OrderBy(contact => contact.State).ToList(); //Sorting State using lambda Expression
+                    break;
                 default:
                     listForSorting = contactList;
                     break;

@@ -28,9 +28,7 @@ namespace AddressBookSystemFromUC11
         private Dictionary<string, List<ContactDetails>> cityToCOntactMapInstance;
         private Dictionary<string, List<ContactDetails>> stateToContactMapInstance;
 
-        /*   UC6:- Refactor to add multiple Address Book to the System.Each Address Book has a unique Name 
-                    - Use Console to add new Address Book - Maintain Dictionary of Address Book Name to Address Book
-           */
+        //UC6:- 
         private AddressBook GetAddressBook() //create get address book method
         {
             try
@@ -282,9 +280,7 @@ namespace AddressBookSystemFromUC11
             }
         }
 
-        /* UC10:- Ability to get number of contact persons i.e. count by City or State.
-                      - Search Result will show count by city and by state.
-        */
+        //UC10 
         internal void CountAllByCity()
         {
             try
@@ -371,7 +367,5 @@ namespace AddressBookSystemFromUC11
                 Console.WriteLine(ex.Message);
             }
         }
-
-
     }
 }
