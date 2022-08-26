@@ -1,126 +1,49 @@
 ﻿namespace AddressBookSystemFromUC11
 {
-        public interface IAddressBook
+    //UC13
+    class Program
+    {
+        static void Main(string[] args)
         {
-            void ViewAllAddressBooks();
-            void DeleteAddressBook();
-        }
-        class Program
-        {
-            // Constants
-            public const string TO_ADD_OR_ACCESS = "a";
-            public const string TO_VIEW_ALL_ADDRESSBOOKS = "view";
-            public const string TO_DELETE_ADDRESS_BOOK = "delete";
-            public const string SEARCH_PERSON_IN_CITY = "city";
-            public const string SEARCH_PERSON_IN_STATE = "state";
-            public const string VIEW_ALL_IN_CITY = "vcity";
-            public const string VIEW_ALL_IN_STATE = "vstate";
-            public const string COUNT_ALL_IN_CITY = "ccity";
-            public const string COUNT_ALL_IN_STATE = "cstate";
-            public const string EXIT = "e";
+            Console.WriteLine("Welcome Address Book Problem\n");
 
-
-            static void Main(string[] args)
+            Console.Write("Enter Number of Address Book you want : ");
+            int numBook = Convert.ToInt32(Console.ReadLine());
+            int numberBook = 0;
+            int key = 1;
+            while (numberBook < numBook)
             {
-                Console.WriteLine("Welcome to Address Book System");
-                
-                AddressBookDetails addressBookDetails = new AddressBookDetails();
-                bool flag = true;
-                while (flag)
-                {
-                    Console.Write("\n1.Add Address Book System" +
-                                      "\n2.Show Address Book System Name" +
-                                      "\n3.Delete Address Book" +
-                                      "\n4.Search Person in City or State " +
-                                      "\n5.Show all Record in City or State" +
-                                      "\n6.Count of Record City or State" +
-                                      "\n7.Exit\nEnter Your Choice: - ");
+                Console.Write("\n Enter name of Address Book : ");
+                string book = Console.ReadLine();
+                Console.WriteLine("\n Select the below option");
+                Console.WriteLine("1.Add Contact Details \n2.View Contant Detials \n3.Count By City Or State Name");
+                Console.Write("Enter Your Choice : ");
+                int num = Convert.ToInt32(Console.ReadLine());
 
-                    int choice = Convert.ToInt32(Console.ReadLine());
-                    switch (choice)
+                while (key != 0)
+                {
+                    switch (num)
                     {
                         case 1:
-                            addressBookDetails.AddAddressBook(); // add new Address book
+                            AddressBook.AddContact();
                             break;
-
                         case 2:
-                            addressBookDetails.ViewAllAddressBooks(); //view all address book names
-                            break;
-
-                        case 3:
-                            addressBookDetails.DeleteAddressBook(); //delete an address book
-                            break;
-
-                        case 4:
-                            try
-                            { 
-                                Console.Write("1.City\n2.State\nEnter Choice:-"); //print 
-                                int choice2 = Convert.ToInt32(Console.ReadLine()); //take input and convert int32
-                                if (choice2 == 1) //check condition
-                                {
-                                    addressBookDetails.SearchInCity(); //search city
-                                }
-                                else if (choice2 == 2)
-                                {
-                                    addressBookDetails.SearchInState();//search State
-                                }
-                            }
-                            catch (Exception ex)
-                            {
-                                Console.WriteLine(ex.Message);
-                            }
-                            break;
-
-                        case 5:
-                            try
-                            {
-                                Console.Write("1.City\n2.State\nEnter Choice:-"); //print
-                                int choice3 = Convert.ToInt32(Console.ReadLine()); //take input and convert int32
-                                if (choice3 == 1)
-                                {
-                                    addressBookDetails.ViewAllByCity();  //  view all contact in a city
-                                }
-                                else if (choice3 == 2)
-                                {
-                                    addressBookDetails.ViewAllByState();  // view all contact in a State
-                                }
-
-                            }
-                            catch (Exception ex)
-                            {
-                                Console.WriteLine(ex.Message);
-                            }
-                            break;
-
-                        case 6:
-                            try
-                            {     
-                                Console.Write("1.City\n2.State\nEnter Choice:-"); //print
-                                int choice4 = Convert.ToInt32(Console.ReadLine()); //take input and convert int32
-                                if (choice4 == 1)
-                                {
-                                    addressBookDetails.CountAllByCity(); //get count of contacts in City
-                                }
-                                else if (choice4 == 2)
-                                {
-                                    addressBookDetails.CountAllByState(); //get count of contacts in state
-                                }
-                            }
-                            catch (Exception ex)
-                            {
-                                Console.WriteLine(ex.Message);
-                            }
-                            break;
-
-                        case 7:
-
-                            flag = false;
+                            AddressBook.Details();
                             break;
                         default:
-                            Console.WriteLine("Please Enter Valid Option");
+                            Console.Write("Choice correct option : ");
+                            num = Convert.ToInt32(Console.ReadLine());
                             break;
                     }
+                    Console.Write("\n Do you wish to continue press 1 or press 0 for exit: ");
+                    key = Convert.ToInt32(Console.ReadLine());
                 }
+                AddressBook.AddTo(book);
+                AddressBook.WriteAddressBookUsingStreamWriter();
+                AddressBook.ReadAddressBookUsingStreamReader();
+                numberBook++;
             }
         }
+
+    }
 }
