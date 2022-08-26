@@ -1,6 +1,6 @@
 ﻿namespace AddressBookSystemFromUC11
 {
-    //UC14
+    //UC15
     class Program
     {
         static void Main(string[] args)
@@ -38,8 +38,7 @@
                     key = Convert.ToInt32(Console.ReadLine());
                 }
                 AddressBook.AddTo(book);
-                AddressBook.CsvSerialise();
-                AddressBook.CsvDeserialise();
+                AddressBook.JsonSerializeAddressBook();
                 numberBook++;
             }
         }

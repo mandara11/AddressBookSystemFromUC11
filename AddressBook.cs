@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -63,6 +64,14 @@ namespace AddressBookSystemFromUC11
                 }
             }
         }
+        public static void JsonSerializeAddressBook()
+        {
+            string jsonPath = @"C:\Users\DELL\source\repo\AddressBookSystemFromUC11\AddressBookSystemFromUC11\AB.json";
+            string result = JsonConvert.SerializeObject(addressBook);
+
+            File.AppendAllText(jsonPath, result);
+
+        }
 
         public static void CsvSerialise()
         {
@@ -90,7 +99,7 @@ namespace AddressBookSystemFromUC11
 
         public static void CsvDeserialise()
         {
-            string csvPath = @"C:\Users\My Laptop\Desktop\BrProjects\AddressBookFromUC11\AddressBookFromUC11\Files\CsvFile.csv";
+            string csvPath = @"C:\Users\DELL\source\repo\AddressBookSystemFromUC11\AddressBookSystemFromUC11\AB.csv";
             using (var reader = new StreamReader(csvPath))
 
             {
