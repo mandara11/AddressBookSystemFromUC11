@@ -1,8 +1,8 @@
-﻿﻿First Name -Shubham
-Last Name -Seth
-Address -shlds
-Phone Number - 7845123698
-Email ID -shubham@gmail.com
-City -Jaunpur
-State -UP
-ZIP Code -222145
+﻿﻿First Name -Mandara
+Last Name -M
+Address -skp
+Phone Number - 2357904567
+Email ID -mandaram@gmail.com
+City -Banglr
+State -Karnataka
+ZIP Code -577227
